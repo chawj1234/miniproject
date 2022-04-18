@@ -5,6 +5,7 @@ typedef struct {
     int price; //판매가격
     int deliv; //배송방법
 } Product;
+
 void saveData(Product *p, int count); //파일에 데이터를 저장한다
 int loadData(Product *p); //파일에서 데이터를 불러온다
 void searchName(Product *p, int count); //제품을 검색한다
