@@ -43,11 +43,11 @@ int main(void){
             if(deletecheck == 1){count-=deleteProduct(&plist[no-1]);}
         }
         else if(menu == 5){
-		//saveData(plist,indexcount);
+		saveData(plist,indexcount);
 	}
-		else if(menu == 6){
-			//searchName(plist,indexcount);
-		}
+	else if(menu == 6){
+		//searchName(plist,indexcount);
+	}
     }
     printf("종료됨!\n");
     return 0;
