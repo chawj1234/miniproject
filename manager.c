@@ -1,8 +1,26 @@
 #include <stdio.h>
 #include <string.h>
 #include "manager.h"
+void searchName(Product *p, int count){
+        int scnt = 0;
+        char search[20];
+        printf("검색할 제품명은? ");
+        scanf("%s", search);
+        printf("\t\t\t제품명 \t설명\t중량\t판매가격\t배송방법\n");
+        printf("************************************************************************************\n");
+        for(int i=0; i<count; i++){
+                if(p[i].price == -1)continue;
+                if(strstr(p[i].name,search)){
+                        printf("%2d ", i+1);
+                        readProduct(p[i]);
+                        scnt++;
+                }
+        }
+        if(scnt == 0) printf("=> 검색된 데이터 없음!");
+        printf("\n");
+}
 
-
+void listProduct(Product *p, int count){
 	printf("\t\t\t제품명 \t설명\t중량\t판매가격\t배송방법\n");
 	printf("************************************************************************************\n");
 	for(int i=0;i<count ; i++){
