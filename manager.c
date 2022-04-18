@@ -20,6 +20,28 @@ void searchName(Product *p, int count){
         printf("\n");
 }
 
+int loadData(Product *p){
+        int i = 0;
+        FILE *fp;
+        fp = fopen("product.txt","rt");
+        if(fp==NULL){
+                printf("=>파일 없음\n");
+                return 0;
+        }
+        for(;i < 100; i++){
+                fscanf(fp,"%s",p[i].name);
+        fscanf(fp,"%s",p[i].explan);
+                if(feof(fp))break;
+                fscanf(fp, "%s",p[i].weight);
+                fscanf(fp, "%d",&p[i].price);
+                fscanf(fp, "%d",&p[i].deliv);
+        }
+        fclose(fp);
+        printf("=> 로딩 성공!\n");
+        return i;
+}
+
+
 void listProduct(Product *p, int count){
 	printf("\t\t\t제품명 \t설명\t중량\t판매가격\t배송방법\n");
 	printf("************************************************************************************\n");
