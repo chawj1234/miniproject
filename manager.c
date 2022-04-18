@@ -42,6 +42,18 @@ int loadData(Product *p){
 }
 
 
+void saveData(Product *p, int count){
+        FILE *fp;
+        fp = fopen("product.txt","wt");
+        for(int i=0; i<count; i++){
+                if(p[i].price == -1)continue;
+                fprintf(fp,"%s %s %s %d %d\n",p[i].name,p[i].explan,p[i].weight,p[i].price,p[i].deliv);
+        }
+        fclose(fp);
+        printf("=> 저장됨!\n");
+}
+
+
 void listProduct(Product *p, int count){
 	printf("\t\t\t제품명 \t설명\t중량\t판매가격\t배송방법\n");
 	printf("************************************************************************************\n");
