@@ -46,7 +46,7 @@ int main(void){
 		saveData(plist,indexcount);
 	}
 	else if(menu == 6){
-		//searchName(plist,indexcount);
+		searchName(plist,indexcount);
 	}
     }
     printf("종료됨!\n");
