@@ -9,7 +9,7 @@ int main(void){
     #ifdef DEBUG
     	printf("=> DEBUGMODE\n");
     #endif
-    //count = loadData(plist);
+    count = loadData(plist);
 	indexcount = count;
     while (1){
         menu = selectMenu();
